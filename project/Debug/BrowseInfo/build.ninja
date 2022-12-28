@@ -1,0 +1,71 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\XclFileGenerator.exe" $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\XclFileGenerator.exe" $flags
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\SourceIndexer.exe" $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\SourceIndexer.exe" $flags
+
+rule MAKEBROWSE
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\makeBrowseData.exe" $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\makeBrowseData.exe" $flags
+
+rule PDBLINK
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\PbdLink.exe" $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\PbdLink.exe" $flags
+
+
+
+#Build steps
+build C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\calc.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\Ibrah\Desktop\project\calc.c -xcl_file C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\calc.xcl -macro_file C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\calc.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = C$:\Users\Ibrah\Desktop\project\calc.c -D "ewarm$ PART_TM4C123GH6PM" -D TARGET_IS_TM4C123_RB1 -o C$:\Users\Ibrah\Desktop\project\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -Ol --predef_macros C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\calc.tmp
+  rspfile_name = C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\calc.xcl.rsp
+
+build C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\lcd.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\Ibrah\Desktop\project\lcd.c -xcl_file C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\lcd.xcl -macro_file C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\lcd.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = C$:\Users\Ibrah\Desktop\project\lcd.c -D "ewarm$ PART_TM4C123GH6PM" -D TARGET_IS_TM4C123_RB1 -o C$:\Users\Ibrah\Desktop\project\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -Ol --predef_macros C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\lcd.tmp
+  rspfile_name = C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\lcd.xcl.rsp
+
+build C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\Ibrah\Desktop\project\main.c -xcl_file C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\main.xcl -macro_file C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\main.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = C$:\Users\Ibrah\Desktop\project\main.c -D "ewarm$ PART_TM4C123GH6PM" -D TARGET_IS_TM4C123_RB1 -o C$:\Users\Ibrah\Desktop\project\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -Ol --predef_macros C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\main.tmp
+  rspfile_name = C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\main.xcl.rsp
+
+build C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\stopWatch.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\Ibrah\Desktop\project\stopWatch.c -xcl_file C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\stopWatch.xcl -macro_file C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\stopWatch.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = C$:\Users\Ibrah\Desktop\project\stopWatch.c -D "ewarm$ PART_TM4C123GH6PM" -D TARGET_IS_TM4C123_RB1 -o C$:\Users\Ibrah\Desktop\project\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -Ol --predef_macros C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\stopWatch.tmp
+  rspfile_name = C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\stopWatch.xcl.rsp
+
+build C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\calc.pbi : INDEXER C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\calc.xcl |  $
+C$:\Users\Ibrah\Desktop\project\calc.c
+  flags = -out=C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\calc.pbi -f C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\calc.xcl
+
+build C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\lcd.pbi : INDEXER C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\lcd.xcl |  $
+C$:\Users\Ibrah\Desktop\project\lcd.c
+  flags = -out=C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\lcd.pbi -f C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\lcd.xcl
+
+build C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\main.pbi : INDEXER C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\main.xcl |  $
+C$:\Users\Ibrah\Desktop\project\main.c
+  flags = -out=C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\main.pbi -f C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\main.xcl
+
+build C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\stopWatch.pbi : INDEXER C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\stopWatch.xcl |  $
+C$:\Users\Ibrah\Desktop\project\stopWatch.c
+  flags = -out=C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\stopWatch.pbi -f C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\stopWatch.xcl
+
+build C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\project.pbw : MAKEBROWSE C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\project.pbd
+  flags = C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\project.pbd -output C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\project.pbw
+
+build C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\project.pbd : PDBLINK C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\calc.pbi |  $
+C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\lcd.pbi $
+C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\main.pbi $
+C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\stopWatch.pbi
+  flags = -M C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\project.pbd C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\calc.pbi C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\lcd.pbi C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\main.pbi C$:\Users\Ibrah\Desktop\project\Debug\BrowseInfo\stopWatch.pbi
+

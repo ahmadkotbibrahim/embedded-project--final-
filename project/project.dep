@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <fileVersion>5</fileVersion>
+    <fileChecksum>2765082989</fileChecksum>
+    <configuration>
+        <name>Debug</name>
+        <outputs>
+            <file>$PROJ_DIR$\Debug\List\calc.i</file>
+            <file>$PROJ_DIR$\Debug\List\main.i</file>
+            <file>$PROJ_DIR$\Debug\List\lcd.i</file>
+            <file>$PROJ_DIR$\stopWatch.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\stopWatch.o</file>
+            <file>$PROJ_DIR$\stopWatch.c</file>
+            <file>$PROJ_DIR$\timer.h</file>
+            <file>$PROJ_DIR$\keypad.h</file>
+            <file>$PROJ_DIR$\project.ewp</file>
+            <file>$PROJ_DIR$\Debug\Exe\project.out</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\lcd.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\calc.o</file>
+            <file>$PROJ_DIR$\keypad.c</file>
+            <file>$PROJ_DIR$\main.c</file>
+            <file>$PROJ_DIR$\calc.h</file>
+            <file>$PROJ_DIR$\calc.c</file>
+            <file>$PROJ_DIR$\lcd.c</file>
+            <file>$PROJ_DIR$\lcd.h</file>
+            <file>$PROJ_DIR$\timer.c</file>
+        </outputs>
+        <file>
+            <name>[ROOT_NODE]</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 9</file>
+                </tool>
+            </outputs>
+        </file>
+        <forcedrebuild>
+            <name>$PROJ_DIR$\main.c</name>
+            <tool>ICCARM</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>$PROJ_DIR$\calc.c</name>
+            <tool>ICCARM</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>$PROJ_DIR$\lcd.c</name>
+            <tool>ICCARM</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
+    </configuration>
+    <configuration>
+        <name>Release</name>
+        <outputs />
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
+    </configuration>
+</project>
